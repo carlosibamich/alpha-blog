@@ -17,7 +17,10 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    logger.debug { "New Article: #{@article.attributes.inspect}" }
+    logger.debug { "Article should be valid: #{@article.valid?}" }
     if @article.save
+      logger.debug { "The article was saved. A flash message will appear and the user will be redirected" }
       flash[:notice] = "Article was successfully created"
       redirect_to article_path(@article)
     else
@@ -27,6 +30,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
+      logger.debug { "The article was updated. The user will be redirected to the show page" }
       flash[:notice] = "Article was successfully updated"
       redirect_to article_path(@article)
     else
