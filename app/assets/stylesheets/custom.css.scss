@@ -1,3 +1,99 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+* {
+ box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+#navbar-box {
+  position: relative;
+  height: 70px;
+  margin-bottom: 60px;
+  padding: 0;
+}
+
+#navbarSupportedContent {
+  padding: 6px 0;
+  background: rgb(246,246,246);
+  border-bottom: 3px solid rgb(115,115,115);
+  white-space: normal;
+
+  & ul {
+    list-style-type: none;
+    padding: 18px 0 12px 0;
+  }
+}
+
+#logo {
+  padding: 25px;
+  font-size: 26px;
+  font-weight: bold;
+  color: rgb(80,80,80);
+  text-transform: uppercase;
+
+  &:hover {
+    color: rgb(40,40,40);
+    text-decoration: none;
+  }
+}
+
+.navbar-nav {
+  margin-left: 55%;
+}
+
+.nav-link {
+  margin-right: 40px;
+  padding: 0 !important;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+
+#search-form {
+  position: absolute;
+  top: 16px;
+  right: 25px;
+}
+
+// .center {
+//   text-align: center;
+// }
+
+.jumbotron {
+  background-image: asset-url('typewriter.jpg');
+  background-size: cover;
+  height: 630px;
+  width: 1090px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  height: 70px;
+  width: 100%;
+  margin-top: 50px;
+  padding: 25px;
+  background: rgb(80,80,80);
+  white-space: normal;
+
+  & p {
+    display: inline;
+    padding-left: 22px;
+    font-size: 18px;
+    color: rgb(240,240,240);
+    letter-spacing: .3px;
+  }
+
+  & ul {
+    float: right;
+    display: inline-block;
+    list-style: none;
+  }
+}
