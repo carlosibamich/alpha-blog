@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
     logger.debug { "Article should be valid: #{@article.valid?}" }
     if @article.save
       logger.debug { "The article was saved. A flash message will appear and the user will be redirected" }
-      flash[:notice] = "Article was successfully created"
+      flash[:success] = "Article was successfully created"
       redirect_to article_path(@article)
     else
       render :new
@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
   def update
     if @article.update(article_params)
       logger.debug { "The article was updated. The user will be redirected to the show page" }
-      flash[:notice] = "Article was successfully updated"
+      flash[:success] = "Article was successfully updated"
       redirect_to article_path(@article)
     else
       render :edit
@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:notice] = "Article was successfully deleted"
+    flash[:danger] = "Article was successfully deleted"
     redirect_to articles_path
   end
 

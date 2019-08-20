@@ -14,9 +14,11 @@ html {
 
 .page-headline {
   margin-bottom: 30px;
+  color: rgb(90,90,90);
+  text-align: center;
 }
 
-// ----------------- Nav Bar ----------------- //
+// ----------------- _Navigation ----------------- //
 #navbar-box {
   position: relative;
   height: 75px;
@@ -63,7 +65,7 @@ nav.navbar {
   margin-right: 30px;
 }
 
-// ---------------------- Footer ----------------------//
+// ---------------------- _Footer ----------------------//
 .footer {
   position: absolute;
   bottom: 0px;
@@ -82,6 +84,15 @@ nav.navbar {
     letter-spacing: .3px;
   }
 }
+
+// ---------------------- _Form ----------------------//
+// .form-group {
+//   display: inline;
+// }
+// .f-label {
+//   display: inline;
+//   margin-right: 0 !important;
+// }
 
 // --------------------- Home Page ------------------- //
 .jumbotron {
@@ -104,5 +115,18 @@ nav.navbar {
   }
   a {
     margin-left: 22px;
+  }
+}
+
+// --------------------- Show Page ------------------- //
+.well {
+  margin-bottom: 60px;
+}
+.link-ops {
+  padding: 12px 54px 0 54px !important;
+  border-top: 1px solid rgb(195,195,195);
+
+  a {
+    text-align: center;
   }
 }
