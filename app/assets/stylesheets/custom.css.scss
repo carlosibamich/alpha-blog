@@ -122,6 +122,7 @@ nav.navbar {
 .well {
   margin-bottom: 60px;
 }
+
 .link-ops {
   padding: 12px 54px 0 54px !important;
   border-top: 1px solid rgb(195,195,195);
@@ -129,4 +130,13 @@ nav.navbar {
   a {
     text-align: center;
   }
+}
+
+.article-title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.article-body {
+  border-top: 1px solid rgb(195,195,195);
 }
