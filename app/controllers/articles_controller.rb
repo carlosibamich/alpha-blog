@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = User.first
     logger.debug { "New Article: #{@article.attributes.inspect}" }
     logger.debug { "Article should be valid: #{@article.valid?}" }
     if @article.save
