@@ -9,6 +9,11 @@
       <div class="article-body">
         <%= truncate(content.body, length: 100) %>
       </div>
+      <small class="article-meta-details">
+        Created by: <%= content.user.username if content.user %>,
+        <%= time_ago_in_words(content.created_at) %> ago &nbsp;
+        last updated: <%= time_ago_in_words(content.updated_at) %> ago
+      </small>
       <div class="col-6 offset-3 link-ops">
         <%= link_to 'Edit this Article', edit_article_path(content) %> &nbsp; &nbsp;
         <%= link_to 'Delete this article', article_path(content), method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} %>

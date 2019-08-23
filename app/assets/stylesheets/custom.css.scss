@@ -18,6 +18,10 @@ html {
   text-align: center;
 }
 
+.main-bg {
+  height: 100%;
+}
+
 // ----------------- _Navigation ----------------- //
 #navbar-box {
   position: relative;
@@ -67,14 +71,13 @@ nav.navbar {
 
 // ---------------------- _Footer ----------------------//
 .footer {
-  position: absolute;
+  // position: absolute;
   bottom: 0px;
   height: 70px;
   width: 100%;
   margin-top: 50px;
   padding: 25px;
   background: rgb(80,80,80);
-  white-space: normal;
 
   p {
     display: inline;
@@ -118,7 +121,14 @@ nav.navbar {
   }
 }
 
+// --------------------- Index Page ------------------- //
+.article-meta-details {
+  margin-top: 25px;
+  border-top: 1px solid rgb(195,195,195);
+}
+
 // --------------------- Show Page ------------------- //
+
 .well {
   margin-bottom: 60px;
 }
