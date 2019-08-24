@@ -2,14 +2,23 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
 
-// ------------------ Global ------------------ //
+// --------------------- Global -------------------- //
 * {
  box-sizing: border-box;
 }
 
-html {
-  margin: 0;
-  padding: 0;
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+.main-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 90px; /* height of footer */
 }
 
 .container-fluid {
@@ -18,7 +27,8 @@ html {
 
 .page-headline {
   margin-bottom: 30px;
-  color: rgb(90,90,90);
+  font-size: 48px;
+  color: rgb(255,85,3);
   text-align: center;
 }
 
@@ -26,7 +36,7 @@ html {
   height: 100%;
 }
 
-// ----------------- _Navigation ----------------- //
+// ------------------- _Navigation ------------------ //
 #navbar-box {
   position: relative;
   height: 75px;
@@ -62,7 +72,7 @@ nav.navbar {
 .nav-link {
   margin-right: 40px;
   padding: 0 !important;
-  font-size: 18px;
+  font-size: 18.5px;
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none !important;
@@ -75,7 +85,7 @@ nav.navbar {
 
 // ---------------------- _Footer ----------------------//
 .footer {
-  position: relative;
+  position: absolute;
   bottom: 0px;
   height: 70px;
   width: 100%;
@@ -93,13 +103,7 @@ nav.navbar {
 }
 
 // ---------------------- _Form ----------------------//
-// .form-group {
-//   display: inline;
-// }
-// .f-label {
-//   display: inline;
-//   margin-right: 0 !important;
-// }
+
 
 // --------------------- Home Page ------------------- //
 .jumbotron {
@@ -114,45 +118,71 @@ nav.navbar {
     margin-top: 108px;
     margin-bottom: 10px;
     padding-left: 13px;
-    color: rgb(50,50,50);
+    color: rgb(90,90,90);
     font-size: 99px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: -1px;
     line-height: 103px;
+
+    .color-wise {
+      color: rgb(255,85,3);
+    }
   }
   a {
     margin-top: 10px;
     margin-left: 19px;
+    color: rgb(90,90,90);
+    border: 1.3px solid rgb(90,90,90);
+
+    &:hover {
+      color: rgb(255,85,3) !important;
+      border-color: rgb(255,85,3) !important;
+    }
   }
 }
 
-// --------------------- Index Page ------------------- //
-.article-meta-details {
-  margin-top: 25px;
-  border-top: 1px solid rgb(195,195,195);
+// --------------------- Articles Index Page ------------------- //
+.article-title {
+  margin-bottom: 25px;
+  border-bottom: 1.5px solid rgb(190,190,190);
+
+  .title-text {
+    font-size: 27px;
+    color: rgb(70,70,70) !important;
+    text-transform: uppercase;
+
+    &:hover {
+      color: rgb(145,145,145) !important;
+      text-decoration: none;
+    }
+  }
 }
 
-// --------------------- Show Page ------------------- //
+.article-body {
+  margin-bottom: 17px;
+  font-size: 19px;
+  color: rgb(85,85,85);
+}
 
-.well {
-  margin-bottom: 60px;
+.article-meta-details {
+  margin-top: 30px;
 }
 
 .link-ops {
   padding: 12px 54px 0 54px !important;
-  border-top: 1px solid rgb(195,195,195);
+  border-bottom: none;
 
   a {
     text-align: center;
   }
 }
 
-.article-title {
-  font-weight: bold;
-  font-size: 24px;
+.article-bg {
+  margin-bottom: 30px;
+  padding: 30px 0;
+  background: rgb(243,243,243);
+  border-radius: 8px;
 }
 
-.article-body {
-  border-top: 1px solid rgb(195,195,195);
-}
+// --------------------- Signup Page ------------------- //
