@@ -15,10 +15,10 @@ body {
 
 .main-container {
   min-height: 100vh; /* will cover the 100% of viewport */
- overflow: hidden;
- display: block;
- position: relative;
- padding-bottom: 90px; /* height of footer */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 110px; /* height of footer */
 }
 
 .container-fluid {
@@ -89,7 +89,6 @@ nav.navbar {
   bottom: 0px;
   height: 70px;
   width: 100%;
-  margin-top: 50px;
   padding: 25px;
   background: rgb(80,80,80);
 
@@ -132,12 +131,12 @@ nav.navbar {
   a {
     margin-top: 10px;
     margin-left: 19px;
-    color: rgb(90,90,90);
-    border: 1.3px solid rgb(90,90,90);
+    color: rgb(255,85,3);
+    border-color: rgb(255,85,3);
 
     &:hover {
-      color: rgb(255,85,3) !important;
-      border-color: rgb(255,85,3) !important;
+      color: rgb(90,90,90) !important;
+      border: 1.3px solid rgb(90,90,90) !important;
     }
   }
 }
@@ -145,7 +144,8 @@ nav.navbar {
 // --------------------- Articles Index Page ------------------- //
 .article-title {
   margin-bottom: 25px;
-  border-bottom: 1.5px solid rgb(190,190,190);
+  padding-bottom: 8px;
+  border-bottom: 1.2px solid rgb(255,85,3);
 
   .title-text {
     font-size: 27px;
@@ -162,11 +162,17 @@ nav.navbar {
 .article-body {
   margin-bottom: 17px;
   font-size: 19px;
-  color: rgb(85,85,85);
+  color: rgb(95,95,95);
 }
 
 .article-meta-details {
-  margin-top: 30px;
+  font-size: 15px;
+  color: rgb(140,140,140);
+
+  span {
+    margin-right: 22px;
+    color: rgb(255,85,3);
+  }
 }
 
 .link-ops {
@@ -186,3 +192,14 @@ nav.navbar {
 }
 
 // --------------------- Signup Page ------------------- //
+.signup-btn {
+  margin-top: 10px;
+  margin-left: 19px;
+  color: rgb(255,85,3);
+  border-color: rgb(255,85,3);
+
+  &:hover {
+    color: rgb(145,145,145) !important;
+    text-decoration: none;
+  }
+}
