@@ -1,7 +1,19 @@
 <h2 class="page-headline"><%= @article.title %></h2>
 
-<div class="well col-8 offset-2">
-  <hr>
+<div class="col-8 offset-2">
+  <% if @article.user %>
+    <ul class="listing">
+      <div class="row">
+        <div class="col-6 offset-3" align="center">
+          <li class="bloglist-img"><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+          <li class="user-border">
+            <%= link_to @article.user.username, user_path(@article.user), class:"bloglist-user" %>
+          </li>
+          <li class="bloglist-articles"><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></li>
+        </div>
+      </div>
+    </ul>
+    <% end %>
   <%= simple_format(@article.body) %>
 </div>
 

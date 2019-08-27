@@ -1,0 +1,14 @@
+<h1 class="page-headline">Codewise Bloggers</h1>
+<% @users.each do |user| %>
+  <ul class="listing">
+    <div class="row">
+      <div class="col-6 offset-3 all-bloggers-bg" align="center">
+        <li class="bloglist-img"><%= link_to gravatar_for(user), user_path(user) %></li>
+        <li class="user-border">
+          <%= link_to user.username, user_path(user), class:"bloglist-user" %>
+        </li>
+        <li class="bloglist-articles"><%= pluralize(user.articles.count, "article") if user.articles %></li>
+      </div>
+    </div>
+  </ul>
+<% end %>
