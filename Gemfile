@@ -11,6 +11,10 @@ gem 'puma', '~> 3.11'
 #Secure password
 gem 'bcrypt', '~> 3.1.7'
 
+#Pagination
+gem'will_paginate', '3.1.7'
+gem'bootstrap-will_paginate', '1.0.0'
+
 # Use SCSS for stylesheets
 gem 'bootstrap', '~> 4.3.1'
 gem 'sass-rails', '~> 5.0'

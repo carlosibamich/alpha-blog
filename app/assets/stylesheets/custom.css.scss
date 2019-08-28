@@ -36,6 +36,20 @@ body {
   height: 100%;
 }
 
+.pagination {
+  margin: 25px auto 0 auto !important;
+}
+
+.page-item.active .page-link {
+  color: rgb(255,255,255) !important;
+  background-color: rgb(255,85,3) !important;
+  border-color: rgb(255,85,3) !important;
+}
+
+.page-link {
+  color: rgb(100,100,100) !important;
+}
+
 // ------------------- _Navigation ------------------ //
 #navbar-box {
   position: relative;

@@ -12,3 +12,6 @@
     </div>
   </ul>
 <% end %>
+<div >
+  <%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+</div>
