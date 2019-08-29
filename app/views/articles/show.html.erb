@@ -5,25 +5,28 @@
     <ul class="listing">
       <div class="row">
         <div class="col-6 offset-3" align="center">
-          <li class="bloglist-img"><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
-          <li class="user-border">
+          <li class="articles-grav-img"><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+          <li>
             <%= link_to @article.user.username, user_path(@article.user), class:"bloglist-user" %>
           </li>
-          <li class="bloglist-articles"><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></li>
         </div>
       </div>
     </ul>
     <% end %>
-  <%= simple_format(@article.body) %>
+    <div class="articles-show-body">
+      <%= simple_format(@article.body) %>
+    </div>
 </div>
 
-  <div class="col-6 offset-3 link-ops">
+  <div class="col-8 offset-2 link-ops" align="center">
     <% if logged_in? && current_user == @article.user %>
-      <%= link_to 'Edit this Article', edit_article_path(@article) %> &nbsp; &nbsp;
-      <%= link_to 'Delete this article', article_path(@article), method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} %> &nbsp; &nbsp;
-      <%= link_to 'Back to All Articles', articles_path %>
+      <%= link_to 'Edit this Article', edit_article_path(@article), class:"btn btn-sm center-btn" %> &nbsp; &nbsp;
+      <%= link_to 'Delete this article', article_path(@article), method: :delete, data: {confirm: 'Are you sure you want to delete the article?'}, class:"btn btn-sm center-btn" %> &nbsp; &nbsp;
+      <%= link_to 'Back to All Articles', articles_path, class:"btn btn-sm center-btn" %>
     <% else %>
-      <%= link_to 'Back to All Articles', articles_path, class:"center-btn" %>
+    <div class="all-articles-link" align="center">
+      <%= link_to 'Back to All Articles', articles_path, class:"btn btn-md center-btn" %>
+    </div>
     <% end %>
 
   </div>

@@ -3,6 +3,8 @@
   <div class="col-4 offset-4 grav-img" align="center">
     <%= gravatar_for @user, size: 150 %>
   </div>
+  <p class="col-4 offset-4 article-count" align="center">
+    <%= @user.username %> has published <%= pluralize(@user.articles.count, "article") if @user.articles %></p>
 </div>
 <%= render 'articles/article', obj: @user_articles %>
 <div>

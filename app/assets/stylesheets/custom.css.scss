@@ -2,6 +2,18 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
 
+@mixin button-link {
+  margin-top: 10px !important;
+  margin-left: 19px !important;
+  color: rgb(255,85,3) !important;
+  border: 1.3px solid rgb(255,85,3) !important;
+
+  &:hover {
+    color: rgb(90,90,90) !important;
+    border: 1.3px solid rgb(90,90,90) !important;
+  }
+}
+
 // --------------------- Global -------------------- //
 * {
  box-sizing: border-box;
@@ -18,7 +30,7 @@ body {
   overflow: hidden;
   display: block;
   position: relative;
-  padding-bottom: 110px; /* height of footer */
+  padding-bottom: 125px; /* height of footer */
 }
 
 .container-fluid {
@@ -50,10 +62,14 @@ body {
   color: rgb(100,100,100) !important;
 }
 
+.buttn {
+  @include button-link;
+  margin-left: 94px !important;
+}
+
 .center-btn {
-  display: block;
-  //align-items: center;
-  margin: auto;
+  @include button-link;
+  margin: auto !important;
 }
 
 // ------------------- _Navigation ------------------ //
@@ -149,15 +165,7 @@ nav.navbar {
     }
   }
   a {
-    margin-top: 10px;
-    margin-left: 19px;
-    color: rgb(255,85,3);
-    border-color: rgb(255,85,3);
-
-    &:hover {
-      color: rgb(90,90,90) !important;
-      border: 1.3px solid rgb(90,90,90) !important;
-    }
+    @include button-link;
   }
 }
 
@@ -180,18 +188,20 @@ nav.navbar {
 }
 
 .article-body {
-  margin-bottom: 17px;
-  font-size: 19px;
-  color: rgb(95,95,95);
+  margin-bottom: 30px;
+  padding-bottom: 34px;
+  font-size: 18px;
+  color: rgb(85,85,85);
+  border-bottom:  1.2px solid rgb(255,85,3);
 }
 
 .article-meta-details {
+  margin-bottom: 10px;
   font-size: 15px;
   color: rgb(140,140,140);
 
   span {
     margin-right: 22px;
-    color: rgb(255,85,3);
   }
 }
 
@@ -206,11 +216,29 @@ nav.navbar {
 
 .article-bg {
   margin-bottom: 30px;
-  padding: 40px 0;
+  padding: 38px 0 30px 0;
   background: rgb(243,243,243);
   border-radius: 8px;
   border: 2px solid rgb(180,180,180);
 }
+
+// --------------------- Articles Show Page ------------------- //
+.articles-grav-img {
+  margin-top: -28px;
+  margin-bottom: 10px;
+}
+
+.articles-show-body {
+  margin-top: 32px;
+  margin-bottom: 40px;
+  font-size: 17px;
+  color: rgb(85,85,85);
+}
+// .all-articles-link {
+//   position: relative;
+//   display: block;
+//   margin: auto !important;
+// }
 
 // --------------------- Signup Page (Users New Page)------------------- //
 .signup-btn {
@@ -233,7 +261,7 @@ nav.navbar {
 
 .bloglist-img {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .bloglist-user {
@@ -254,13 +282,14 @@ nav.navbar {
 }
 
 .bloglist-articles {
+  display: block;
   font-size: 20px;
   color: rgb(110,110,110);
 }
 
 .all-bloggers-bg {
   margin-bottom: 30px;
-  padding: 30px 0;
+  padding: 35px 0 30px 0;
   background: rgb(249,249,249);
   border-radius: 8px;
   border: 2px solid rgb(180,180,180);
@@ -268,5 +297,11 @@ nav.navbar {
 
 // --------------------- Users Show Page ------------------- //
 .grav-img {
-  margin-bottom: 40px;
+  margin-top: -25px;
+  margin-bottom: 24px;
+}
+.article-count {
+  margin-bottom: 50px;
+  font-size: 20px;
+  color: rgb(110,110,110);
 }

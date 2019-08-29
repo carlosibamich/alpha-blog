@@ -7,19 +7,20 @@
       <div class="article-body">
         <%= truncate(article.body, length: 300) %>
       </div>
-      <p class="article-meta-details">
+      <p class="article-meta-details" align="center">
         <span>
           Created <%= time_ago_in_words(article.created_at) %> ago by <%= article.user.username if article.user %>
         </span>
         Updated <%= time_ago_in_words(article.updated_at) %> ago
-
       </p>
-      <% if logged_in? && current_user == article.user %>
-        <div class="col-6 offset-3 link-ops">
-          <%= link_to 'Edit this Article', edit_article_path(article) %> &nbsp; &nbsp;
-          <%= link_to 'Delete this article', article_path(article), method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} %>
+      <div class="link-ops">
+        <% if logged_in? && current_user == article.user %>
+          <div class="link-ops" align="center">
+            <%= link_to 'Edit this Article', edit_article_path(article), class:"btn btn-sm center-btn" %> &nbsp; &nbsp;
+            <%= link_to 'Delete this article', article_path(article), method: :delete, data: {confirm: 'Are you sure you want to delete the article?'}, class:"btn btn-sm center-btn" %>
+          </div>
         </div>
-        <% end %>
+      <% end %>
     </div><!-- end cols -->
   </section><!-- end row -->
 <% end %>
