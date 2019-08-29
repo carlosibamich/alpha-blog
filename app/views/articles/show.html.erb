@@ -17,8 +17,13 @@
   <%= simple_format(@article.body) %>
 </div>
 
-<div class="col-6 offset-3 link-ops">
-  <%= link_to 'Edit this Article', edit_article_path(@article) %> &nbsp; &nbsp;
-  <%= link_to 'Back to Articles Listing', articles_path %> &nbsp; &nbsp;
-  <%= link_to 'Delete this article', article_path(@article), method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} %>
-</div>
+  <div class="col-6 offset-3 link-ops">
+    <% if logged_in? && current_user == @article.user %>
+      <%= link_to 'Edit this Article', edit_article_path(@article) %> &nbsp; &nbsp;
+      <%= link_to 'Delete this article', article_path(@article), method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} %> &nbsp; &nbsp;
+      <%= link_to 'Back to All Articles', articles_path %>
+    <% else %>
+      <%= link_to 'Back to All Articles', articles_path, class:"center-btn" %>
+    <% end %>
+
+  </div>

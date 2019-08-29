@@ -14,10 +14,12 @@
         Updated <%= time_ago_in_words(article.updated_at) %> ago
 
       </p>
-      <div class="col-6 offset-3 link-ops">
-        <%= link_to 'Edit this Article', edit_article_path(article) %> &nbsp; &nbsp;
-        <%= link_to 'Delete this article', article_path(article), method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} %>
-      </div>
+      <% if logged_in? && current_user == article.user %>
+        <div class="col-6 offset-3 link-ops">
+          <%= link_to 'Edit this Article', edit_article_path(article) %> &nbsp; &nbsp;
+          <%= link_to 'Delete this article', article_path(article), method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} %>
+        </div>
+        <% end %>
     </div><!-- end cols -->
   </section><!-- end row -->
 <% end %>

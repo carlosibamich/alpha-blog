@@ -50,6 +50,12 @@ body {
   color: rgb(100,100,100) !important;
 }
 
+.center-btn {
+  display: block;
+  //align-items: center;
+  margin: auto;
+}
+
 // ------------------- _Navigation ------------------ //
 #navbar-box {
   position: relative;
