@@ -57,7 +57,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_same_user
-      if current_user != @article.user_id
+      if current_user != @article.user && !current_user.admin?
         flash[:danger] = "You are not authorized to edit this page"
         redirect_to root_path
       end

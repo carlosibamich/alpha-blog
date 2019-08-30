@@ -72,6 +72,30 @@ body {
   margin: auto !important;
 }
 
+// --------------------- _Errors -------------------- //
+.panel-heading {
+  display: block;
+  margin-left: 30px;
+}
+
+.panel-title {
+  font-size: 28px;
+}
+
+.panel {
+  display: block;
+  margin: 0 auto 40px auto;
+  padding: 23px 35px 18px 35px;
+  color: rgb(255,255,255);
+  background: rgba(255,40,15,.5);
+}
+
+// -------------------- _Messages ------------------- //
+.alert {
+  margin-bottom: 34px !important;
+  text-align: center;
+}
+
 // ------------------- _Navigation ------------------ //
 #navbar-box {
   position: relative;
@@ -115,8 +139,14 @@ nav.navbar {
 }
 
 #search-form {
-  float: right;
-  margin-right: 30px;
+  margin-top: 0 !important;
+  margin-right: 36px;
+
+  button {
+    @include button-link;
+    margin-top: 0 !important;
+    margin-left: 0 !important
+  }
 }
 
 // ---------------------- _Footer ----------------------//
@@ -137,7 +167,7 @@ nav.navbar {
   }
 }
 
-// ---------------------- _Form ----------------------//
+// ----------------------- _Form -----------------------//
 
 
 // --------------------- Home Page ------------------- //
