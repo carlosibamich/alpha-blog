@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    admin = User.find_by(email: params[:session][:email].downcase, admin:true)
+    admin = User.find_by(email: params[:session][:email].downcase, admin: true)
     if admin && admin.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      flash[:success] = "You have successfully logged in as admin. With great power comes great responsibility"
+      flash[:success] = "You have logged in as admin. With great power comes great responsibility!"
       redirect_to users_path
     elsif user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id

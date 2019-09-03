@@ -2,15 +2,78 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
 
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Anton Regular'), local('Anton-Regular'), url(https://fonts.gstatic.com/s/anton/v11/1Ptgg87LROyAm3Kz-C8CSKlv.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Raleway Medium'), local('Raleway-Medium'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptrg8zYS_SKggPNwN4rWqZPANqczVs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Raleway Bold'), local('Raleway-Bold'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptrg8zYS_SKggPNwJYtWqZPANqczVs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Special Elite';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Special Elite Regular'), local('SpecialElite-Regular'), url(https://fonts.gstatic.com/s/specialelite/v10/XLYgIZbkc4JPUL5CVArUVL0ntnAOSFNuQsI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+// @mixin button-link {
+//   margin-top: 10px !important;
+//   margin-left: 19px !important;
+//   color: rgb(255,85,3) !important;
+//   border: 1.3px solid rgb(255,85,3) !important;
+//
+//   &:hover {
+//     color: rgb(90,90,90) !important;
+//     border: 1.3px solid rgb(90,90,90) !important;
+//   }
+// }
+
 @mixin button-link {
+  padding: 3px 15px 1px 15px !important;
   margin-top: 10px !important;
   margin-left: 19px !important;
+  font-family: 'Anton', sans-serif;
+  font-size: 30px;
   color: rgb(255,85,3) !important;
-  border: 1.3px solid rgb(255,85,3) !important;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  border-radius: 0 !important;
+  border: 2.5px solid rgb(255,85,3) !important;
 
   &:hover {
-    color: rgb(90,90,90) !important;
-    border: 1.3px solid rgb(90,90,90) !important;
+    color: rgb(100,100,100) !important;
+    border: 2.5px solid rgb(100,100,100) !important;
   }
 }
 
@@ -30,18 +93,42 @@ body {
   overflow: hidden;
   display: block;
   position: relative;
-  padding-bottom: 125px; /* height of footer */
+  padding-bottom: 130px; /* height of footer */
 }
 
 .container-fluid {
   padding: 0 !important;
 }
 
+.form-control {
+  border-radius: 0 !important;
+}
+
+input.form-control.mr-sm-2 {
+  margin-right: 0 !important;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  margin-top: 32px;
+  margin-bottom: 40px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17.5px;
+  font-weight: 400;
+  color: rgb(80,80,80);
+}
+
 .page-headline {
   margin-bottom: 60px;
-  font-size: 48px;
-  color: rgb(255,85,3);
+  font-family: 'Special Elite', cursive;
+  font-size: 47px;
+  font-weight: 700;
+  color: rgb(80,80,80);
   text-align: center;
+  text-transform: uppercase;
 }
 
 .main-bg {
@@ -70,6 +157,14 @@ body {
 .center-btn {
   @include button-link;
   margin: auto !important;
+}
+
+.cancel-request {
+  margin-top: 50px;
+
+  a {
+    color: rgb(100,100,100) !important;
+  }
 }
 
 // --------------------- _Errors -------------------- //
@@ -107,8 +202,8 @@ body {
 nav.navbar {
   height: 75px;
   padding: 0;
-  background-color: rgb(235,235,235) !important;
-  border-bottom: 3px solid rgb(115,115,115);
+  background-color: rgb(230,230,230) !important;
+  border-bottom: 7px solid rgb(218, 170, 73);
 }
 
 #navbarSupportedContent ul {
@@ -117,22 +212,24 @@ nav.navbar {
 }
 
 #logo {
-  padding: 25px;
-  font-size: 26px;
-  font-weight: bold;
-  color: rgb(80,80,80);
+  padding-left: 26px;
+  margin-top: 4px;
+  font-family: "Anton", sans-serif;
+  font-size: 32px;
+  color: rgb(85,85,85);
   text-transform: uppercase;
 
   &:hover {
-    color: rgb(40,40,40);
+    color: rgb(65,65,65);
     text-decoration: none;
   }
 }
 
 .nav-link {
-  margin-right: 40px;
+  margin-right: 30px;
   padding: 0 !important;
-  font-size: 18.5px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none !important;
@@ -141,11 +238,29 @@ nav.navbar {
 #search-form {
   margin-top: 0 !important;
   margin-right: 36px;
+  // outline: none !important;
 
   button {
-    @include button-link;
+    height: 38px;
     margin-top: 0 !important;
-    margin-left: 0 !important
+    margin-left: 0 !important;
+    font-family: "Anton", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: rgb(90,90,90) !important;
+    letter-spacing: 1.4px;
+    background-color: rgb(218, 170, 73) !important;
+    border-radius: 0 !important;
+    border: none !important;
+
+    &:hover {
+      color: rgb(230,230,230) !important;
+      border: none !important;
+    }
+  }
+
+  button.btn.btn-md.nav-buttn.my-2.my-sm-0 {
+    padding: 3px 12px !important;
   }
 }
 
@@ -153,17 +268,24 @@ nav.navbar {
 .footer {
   position: absolute;
   bottom: 0px;
-  height: 70px;
+  height: 98px;
   width: 100%;
-  padding: 25px;
-  background: rgb(80,80,80);
+  padding: 33px;
+  background: rgb(75,75,75);
+  border-top: 7px solid rgb(218, 170, 73);
 
   p {
     display: inline;
-    padding-left: 22px;
+    padding-left: 8px;
+    font-family: 'Raleway', sans-serif;
     font-size: 17px;
+    font-weight: 500;
     color: rgb(230,230,230);
     letter-spacing: .3px;
+
+    .footer-color-words {
+      color: rgb(218, 170, 73);
+    }
   }
 }
 
@@ -172,23 +294,22 @@ nav.navbar {
 
 // --------------------- Home Page ------------------- //
 .jumbotron {
-  background-image: asset-url('typewriter.jpg');
-  background-size: cover;
   height: 630px;
   width: 1090px;
+  background-image: asset-url('typewriter.jpg');
+  background-size: cover;
 }
 
 .jumbo-info {
   h1 {
-    margin-top: 108px;
+    margin-top: 80px;
     margin-bottom: 10px;
-    padding-left: 13px;
+    font-family: 'Anton', sans-serif;
     color: rgb(90,90,90);
-    font-size: 99px;
-    font-weight: bold;
+    font-size: 145px;
     text-transform: uppercase;
     letter-spacing: -1px;
-    line-height: 103px;
+    line-height: 145px;
 
     .color-wise {
       color: rgb(255,85,3);
@@ -196,22 +317,62 @@ nav.navbar {
   }
   a {
     @include button-link;
+    margin-top: 0 !important;
+    margin-left: 5px !important;
+  }
+}
+
+// --------------------- About Page ------------------- //
+.about-info {
+  padding-left: 46px !important;
+  margin-top: -40px;
+  margin-bottom: 30px;
+  font-size: 17px;
+  color: rgb(85,85,85);
+
+  &:before {
+    content: "";
+    display: block;
+    padding-bottom: 35px;
+    margin: 0 auto;
+    width: 98%;
+    border-top: 1px solid rgb(255,84,3);
   }
 }
 
 // --------------------- Articles Index Page ------------------- //
+.article-bg {
+  // padding-bottom: 40px;
+  margin-top: 65px;
+
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 35px;
+    margin: 0 auto;
+    width: 81%;
+    border-top: 1px solid rgb(255,84,3);
+  }
+}
+
 .article-title {
-  margin-bottom: 25px;
+  margin-bottom: 55px;
   padding-bottom: 8px;
-  border-bottom: 1.2px solid rgb(255,85,3);
+  text-align: center;
 
   .title-text {
-    font-size: 27px;
-    color: rgb(70,70,70) !important;
+    padding: 12px 22px;
+    margin-bottom: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: rgb(218,170,73) !important;
     text-transform: uppercase;
+    border: 9px solid rgb(218,170,73);
 
     &:hover {
-      color: rgb(145,145,145) !important;
+      color: rgb(155,155,155) !important;
+      border: 9px solid rgb(155,155,155);
       text-decoration: none;
     }
   }
@@ -219,10 +380,6 @@ nav.navbar {
 
 .article-body {
   margin-bottom: 30px;
-  padding-bottom: 34px;
-  font-size: 18px;
-  color: rgb(85,85,85);
-  border-bottom:  1.2px solid rgb(255,85,3);
 }
 
 .article-meta-details {
@@ -236,56 +393,44 @@ nav.navbar {
 }
 
 .link-ops {
-  padding: 12px 54px 0 54px !important;
+  padding: 12px 54px 30px 54px !important;
   border-bottom: none;
+  text-align: center;
 
   a {
     text-align: center;
   }
 }
 
-.article-bg {
-  margin-bottom: 30px;
-  padding: 38px 0 30px 0;
-  background: rgb(243,243,243);
-  border-radius: 8px;
-  border: 2px solid rgb(180,180,180);
-}
-
 // --------------------- Articles Show Page ------------------- //
 .articles-grav-img {
-  margin-top: -28px;
+  margin-top: -32px;
   margin-bottom: 10px;
 }
 
 .articles-show-body {
   margin-top: 32px;
-  margin-bottom: 40px;
-  font-size: 17px;
-  color: rgb(85,85,85);
 }
-// .all-articles-link {
-//   position: relative;
-//   display: block;
-//   margin: auto !important;
-// }
+
+.article-show-body-box {
+  margin-bottom: 50px;
+}
 
 // --------------------- Signup Page (Users New Page)------------------- //
-.signup-btn {
-  margin-top: 10px;
-  margin-left: 19px;
-  color: rgb(255,85,3);
-  border-color: rgb(255,85,3);
-
-  &:hover {
-    color: rgb(145,145,145) !important;
-    text-decoration: none;
-  }
-}
+// .signup-btn {
+//   margin-top: 10px;
+//   margin-left: 19px;
+//   color: rgb(255,85,3);
+//   border-color: rgb(255,85,3);
+//
+//   &:hover {
+//     color: rgb(145,145,145) !important;
+//     text-decoration: none;
+//   }
+// }
 
 // --------------------- Users Index Page ------------------- //
 .listing {
-  list-style: none;
   padding-left: 0;
 }
 
@@ -295,34 +440,38 @@ nav.navbar {
 }
 
 .bloglist-user {
-  font-size: 25px;
-  font-weight: bold;
-  color: rgb(100,100,110) !important;
+  font-family: 'Special Elite',cursive;
+  font-size: 30px;
+  // font-weight: bold;
+  color: rgb(85,85,85) !important;
 
   &:hover {
     text-decoration: none;
-    color: rgb(255,85,3) !important;
+    color: rgb(120,120,120) !important;
   }
 }
+
 .user-border {
   width: 75%;
   margin-bottom: 18px;
   padding-bottom: 7px;
-  border-bottom: 1px solid rgb(255,85,3);
+  border-bottom: 1px solid rgb(218, 170, 73);
 }
 
 .bloglist-articles {
   display: block;
-  font-size: 20px;
-  color: rgb(110,110,110);
+  font-family: 'Raleway', sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  color: rgb(100,100,100);
 }
 
 .all-bloggers-bg {
   margin-bottom: 30px;
   padding: 35px 0 30px 0;
-  background: rgb(249,249,249);
-  border-radius: 8px;
-  border: 2px solid rgb(180,180,180);
+  // background: rgb(249,249,249);
+  // border-radius: 8px;
+  border: 5px solid rgba(218, 170, 73,.5);
 }
 
 // --------------------- Users Show Page ------------------- //
@@ -334,4 +483,32 @@ nav.navbar {
   margin-bottom: 50px;
   font-size: 20px;
   color: rgb(110,110,110);
+}
+
+// ------------------ Categories Index Page ---------------- //
+.categories-headline {
+  padding-left: 30px;
+}
+
+.category-title {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+
+  .category-text {
+    padding: 12px 22px;
+    margin-bottom: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: rgb(218,170,73) !important;
+    text-transform: uppercase;
+    border: 9px solid rgb(218,170,73);
+
+    &:hover {
+      color: rgb(155,155,155) !important;
+      border: 9px solid rgb(155,155,155);
+      text-decoration: none;
+    }
+  }
 }
