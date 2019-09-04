@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   before_save { self.email = email.downcase }
   has_secure_password
+  include Gravtastic
+  gravtastic
 
   validates :username, presence: true,
             uniqueness: { case_sensitive: false },
