@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :articles, dependent: :destroy
+  has_many :categories, through: :articles
   before_save { self.email = email.downcase }
   has_secure_password
 
