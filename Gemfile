@@ -15,6 +15,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem'will_paginate', '3.1.7'
 gem'bootstrap-will_paginate', '1.0.0'
 
+#Profile pic for users -- from user's email account
+gem 'gravtastic'
+
 # Use SCSS for stylesheets
 gem 'bootstrap', '~> 4.3.1'
 gem 'sass-rails', '~> 5.0'

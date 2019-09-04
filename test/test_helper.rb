@@ -4,7 +4,7 @@ require 'rails/test_help'
 
 module SignInHelper
   def sign_in_as(user, password)
-    post login_path(email: user.email, password: user.password)
+    post login_path, params: { session: { email: user.email, password: password } }
   end
 end
 
