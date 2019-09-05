@@ -16,6 +16,11 @@
   <div class="article-show-body-box">
     <p class="articles-show-body">
       <%= simple_format(@article.body) %>
+      <% if @article.categories.any? %>
+        <p class="articlesshow-rendercategory">
+          Categories: <%= render @article.categories %>
+        </P>
+      <% end %>
     </p>
   </div>
 </div>

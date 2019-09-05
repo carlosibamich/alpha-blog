@@ -4,12 +4,17 @@
     <div class="row">
       <div class="col-6 offset-3 category-bg">
         <li class="category-title">
-          <%= link_to "#{category.name}", category_path(category), class:"category-text" %>
+          <%= link_to "#{category.name}", category_path(category), class:"category-text" %><br>
+          <p class="category-count">
+            <%= pluralize(category.articles.count, "Article") %>
+          </p>
         </li>
+
       </div>
     </div>
   </ul>
 <% end %>
+<div id="spacing"></div>
 <div >
   <%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 </div>

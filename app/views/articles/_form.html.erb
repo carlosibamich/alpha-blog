@@ -19,6 +19,15 @@
           <%= f.text_area :body, rows: 10, class:"form-control", placeholder:"Body of article" %>
         </div>
       </div><!-- end form-group -->
+      <div class="form-check form-check-inline">
+        <div class="row">
+          <div class="col-sm-12 checkbox-box">
+            <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+              <% cb.label(class:"form-check-label checkbox-spacing") {cb.check_box(class:"form-check-input") + cb.text } %>
+            <% end %>
+          </div>
+        </div>
+      </div><!-- end form-group -->
       <div class="form-group">
         <div class="col-sm-8">
           <%= f.submit class:"btn btn-lg buttn"%>

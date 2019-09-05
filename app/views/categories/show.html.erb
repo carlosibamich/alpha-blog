@@ -1,0 +1,13 @@
+<h1 class="page-headline">All articles in <span class="category-color"><%= @category.name%></span> Category...</h1>
+<% if logged_in? && current_user.admin? %>
+  <div class="row edit-cat-name">
+    <%= link_to "Edit category name", edit_category_path, class:"buttn center-btn" %>
+  </div>
+<% end %>
+<div id="spacing"></div>
+<div>
+  <%= render 'articles/article', obj: @category_articles %>
+</div>
+<div >
+  <%= will_paginate @category_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+</div>

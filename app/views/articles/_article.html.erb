@@ -4,6 +4,11 @@
       <div class="article-title">
         <%= link_to article.title, article_path(article), class:"title-text" %>
       </div>
+      <% if article.categories.any? %>
+        <p class="articlepartial-rendercategory">
+          Categories: <%= render article.categories %>
+        </P>
+      <% end %>
       <p class="article-body">
         <%= truncate(article.body, length: 440) %>
       </p>
